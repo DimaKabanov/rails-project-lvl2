@@ -7,4 +7,15 @@ start:
 test:
 	NODE_ENV=test bin/rails test
 
+lint:
+	bundle exec rubocop
+
+linter-fix:
+	bundle exec rubocop -A
+
+deploy:
+	git push heroku main
+
+check: lint test
+
 .PHONY: test
