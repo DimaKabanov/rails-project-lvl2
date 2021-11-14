@@ -1,0 +1,10 @@
+ru:
+  title: Коллективный блог
+  nav:
+    logout: Выйты
+    login: Войти
+    registration: Зарегистрироваться
+  layouts:
+    shared:
+      footer:
+        hexlet_title: © Хекслет, %{year}

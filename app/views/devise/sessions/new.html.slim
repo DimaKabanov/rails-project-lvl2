@@ -1,19 +1,19 @@
-h2.h3.mb-3.fw-normal Log in
+h2.h3.mb-3.fw-normal = t('.title')
 
 .row.text-start.justify-content-center
   .col-5
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .mb-3.form-floating
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "email@example.com"
+        = f.input_field :email, placeholder: 'email@example.com', autofocus: true, autocomplete: 'email', class: 'form-control'
         = f.label :email, class: 'form-label'
       .mb-3.form-floating
-        = f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "Password"
+        = f.input_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password'
         = f.label :password, class: 'form-label'
       - if devise_mapping.rememberable?
         .mb-4.form-check
           = f.check_box :remember_me, class: 'form-check-input'
           = f.label :remember_me, class: 'form-check-label'
       .actions
-        = f.submit "Log in", class: 'w-100 btn btn-lg btn-primary'
+        = f.submit t('.action'), class: 'w-100 btn btn-lg btn-primary'
     .d-flex.mt-3
       = render "devise/shared/links"

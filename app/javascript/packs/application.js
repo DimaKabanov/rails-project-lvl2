@@ -12,3 +12,4 @@ import Rails from "@rails/ujs"
 Rails.start()
 // Turbolinks.start()
 // ActiveStorage.start()
+const images = require.context('../images', true);
