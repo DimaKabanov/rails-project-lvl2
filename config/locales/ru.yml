@@ -1,9 +1,10 @@
 ru:
   title: Коллективный блог
   nav:
-    logout: Выйты
+    logout: Выйти
     login: Войти
     registration: Зарегистрироваться
+    add_post: Создать статью
   layouts:
     shared:
       footer:

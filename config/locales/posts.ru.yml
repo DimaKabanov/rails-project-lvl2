@@ -1,0 +1,11 @@
+ru:
+  posts:
+    index:
+      created_at: Создано %{time} назад
+    new:
+      title: Новая статья
+    show:
+      created_at: Создано %{time} назад
+      author: "Автор: %{email}"
+    create:
+      success: Статья была успешно создана

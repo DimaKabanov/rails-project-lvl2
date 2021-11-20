@@ -1,0 +1,11 @@
+en:
+  posts:
+    index:
+      created_at: Created at %{time} ago
+    new:
+      title: New Article
+    show:
+      created_at: Created at %{time} ago
+      author: "Author: %{email}"
+    create:
+      success: Article was successfully created

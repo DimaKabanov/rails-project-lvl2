@@ -4,6 +4,7 @@ en:
     logout: Log out
     login: Log in
     registration: Registration
+    add_post: Create post
   layouts:
     shared:
       footer:
