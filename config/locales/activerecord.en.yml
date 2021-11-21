@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      post:
+        title: Title
+        body: Text
+        post_category: Article category
+      user:
+        password: Password
+        email: Email
+        password_confirmation: Password confirmation

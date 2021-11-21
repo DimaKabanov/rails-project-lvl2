@@ -1,6 +1,7 @@
 ru:
   title: Коллективный блог
   nav:
+    posts: Статьи
     logout: Выйти
     login: Войти
     registration: Зарегистрироваться

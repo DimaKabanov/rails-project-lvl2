@@ -1,0 +1,5 @@
+en:
+  helpers:
+    submit:
+      post:
+        create: Create article

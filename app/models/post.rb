@@ -4,5 +4,6 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :post_category
 
-  validates :title, :body, presence: true
+  validates :title, presence: true
+  validates :body, presence: true, length: { minimum: 50 }
 end

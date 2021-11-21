@@ -1,6 +1,7 @@
 en:
   title: Collective blog
   nav:
+    posts: Articles
     logout: Log out
     login: Log in
     registration: Registration

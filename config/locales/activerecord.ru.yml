@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    attributes:
+      post:
+        title: Заголовок
+        body: Текст
+        post_category: Категория статьи
+      user:
+        password: Пароль
+        email: Email
+        password_confirmation: Подтверждение пароля

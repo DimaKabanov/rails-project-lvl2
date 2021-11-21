@@ -3,12 +3,11 @@ h2.h3.mb-3.fw-normal = t('.title')
 .row.text-start.justify-content-center
   .col-5
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .mb-3.form-floating
-        = f.input_field :email, placeholder: 'email@example.com', autofocus: true, autocomplete: 'email', class: 'form-control'
-        = f.label :email, class: 'form-label'
-      .mb-3.form-floating
-        = f.input_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password'
-        = f.label :password, class: 'form-label'
+      = f.error_notification
+      .mb-3
+        = f.input :email, autofocus: true, autocomplete: 'email'
+      .mb-3
+        = f.input :password, autocomplete: 'current-password'
       - if devise_mapping.rememberable?
         .mb-4.form-check
           = f.check_box :remember_me, class: 'form-check-input'
