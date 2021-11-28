@@ -3,7 +3,11 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /en|ru/ do
     root 'posts#index'
-    resources :posts, only: %i[index new create show]
     devise_for :users
+    resources :posts, only: %i[index new create show] do
+      scope module: :posts do
+        resources :comments, only: %i[create]
+      end
+    end
   end
 end

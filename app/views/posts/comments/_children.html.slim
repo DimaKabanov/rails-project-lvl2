@@ -1,0 +1,12 @@
+- children.each do |child|
+  div.ps-4
+    hr
+    b.me-2 = child.user.email
+    small = t('.created_at', time: time_ago_in_words(child.created_at))
+    div
+      = child.content
+      - if child.has_children?
+        = render 'posts/comments/children', children: child.children
+    div
+      = render 'posts/comments/reply', comment: child
+    hr

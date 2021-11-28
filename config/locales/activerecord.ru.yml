@@ -9,3 +9,5 @@ ru:
         password: Пароль
         email: Email
         password_confirmation: Подтверждение пароля
+      post_comment:
+        content: Комментарий

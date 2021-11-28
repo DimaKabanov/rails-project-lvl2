@@ -2,6 +2,12 @@ ru:
   posts:
     index:
       created_at: Создано %{time} назад
+      author: "Автор: %{email}"
+      comments:
+        one: 1 комментарий
+        few: "%{count} комментария"
+        many: "%{count} комментариев"
+        other: "%{count} комментариев"
     new:
       title: Новая статья
     show:
@@ -9,3 +15,12 @@ ru:
       author: "Автор: %{email}"
     create:
       success: Статья была успешно создана
+    comments:
+      create:
+        success: Комментарий был успешно создан
+        error: Комментарий не может быть пустым
+      reply:
+        reply: Ответить
+        required: Требуется авторизация
+      children:
+        created_at: Создано %{time} назад

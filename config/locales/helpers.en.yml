@@ -3,3 +3,5 @@ en:
     submit:
       post:
         create: Create article
+      post_comment:
+        create: Create comment

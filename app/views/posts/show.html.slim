@@ -3,3 +3,24 @@
   p = @post.body
   p = t('.author', email: @post.user.email)
   p = t('.created_at', time: time_ago_in_words(@post.created_at))
+
+  - if user_signed_in?
+    = render 'posts/comments/form'
+
+  hr.my-5
+
+  - if @post.post_comments.empty?
+    h2.display-6 Комментариев пока нет
+  - else
+    - @post.post_comments.filter { |comment| !comment.has_parent? }.each do |comment|
+      - if comment.user
+        .card.mb-4
+          .card-header
+            b.me-3 = comment.user.email
+            span = p = t('.created_at', time: time_ago_in_words(comment.created_at))
+          .card-body
+            p.card-text = comment.content
+            - if comment.has_children?
+              = render 'posts/comments/children', children: comment.children
+          .card-footer
+            = render 'posts/comments/reply', comment: comment

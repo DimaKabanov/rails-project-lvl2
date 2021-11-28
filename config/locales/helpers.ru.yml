@@ -3,3 +3,5 @@ ru:
     submit:
       post:
         create: Создать статью
+      post_comment:
+        create: Создать комментарий

@@ -5,6 +5,7 @@
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import Rails from "@rails/ujs"
+import 'bootstrap/dist/js/bootstrap';
 // import Turbolinks from "turbolinks"
 // import * as ActiveStorage from "@rails/activestorage"
 // import "channels"

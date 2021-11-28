@@ -2,6 +2,10 @@ en:
   posts:
     index:
       created_at: Created at %{time} ago
+      author: "Author: %{email}"
+      comments:
+        one: 1 comment
+        other: "%{count} comments"
     new:
       title: New Article
     show:
@@ -9,3 +13,12 @@ en:
       author: "Author: %{email}"
     create:
       success: Article was successfully created
+    comments:
+      create:
+        success: Comment was successfully created
+        error: Comment cannot be empty
+      reply:
+        reply: Reply
+        required: Authorization required
+      children:
+        created_at: Created at %{time} ago
