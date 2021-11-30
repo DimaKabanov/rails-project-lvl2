@@ -4,6 +4,19 @@
   p = t('.author', email: @post.user.email)
   p = t('.created_at', time: time_ago_in_words(@post.created_at))
 
+  span
+    span.me-2 = @post.post_likes.count
+    - if user_signed_in?
+      - if @current_user_like
+        = link_to post_like_path(@post, @current_user_like), method: :delete do
+          i.fas.fa-light.fa-heart
+      - else
+        = link_to post_likes_path(@post), method: :post do
+          i.far.fa-light.fa-heart
+    - else
+      = link_to new_user_session_path do
+        i.fas.fa-light.fa-heart
+
   - if user_signed_in?
     = render 'posts/comments/form'
 

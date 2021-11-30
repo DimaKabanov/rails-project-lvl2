@@ -3,6 +3,8 @@ ru:
     index:
       created_at: Создано %{time} назад
       author: "Автор: %{email}"
+      empty: Статей пока нет
+      likes: "Понравилось: %{like_count}"
       comments:
         one: 1 комментарий
         few: "%{count} комментария"

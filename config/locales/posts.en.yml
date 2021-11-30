@@ -3,6 +3,8 @@ en:
     index:
       created_at: Created at %{time} ago
       author: "Author: %{email}"
+      empty: No articles yet
+      likes: "Liked: %{like_count}"
       comments:
         one: 1 comment
         other: "%{count} comments"
