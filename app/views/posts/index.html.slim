@@ -10,5 +10,5 @@
         p.mb-1 = truncate(post.body, length: 300)
         .d-flex
           small.me-2 = t('.author', email: post.creator.email)
-          small = t('.comments', count: post.post_comments.count)
-          small.ms-auto = t('.likes', like_count: post.post_likes.count)
+          small = t('.comments', count: post.comments.count)
+          small.ms-auto = t('.likes', like_count: post.likes.count)
