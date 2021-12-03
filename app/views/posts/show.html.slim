@@ -5,7 +5,7 @@
   p = t('.created_at', time: time_ago_in_words(@post.created_at))
 
   span
-    span.me-2 = @post.post_likes.count
+    span.me-2 = @post.likes.count
     - if user_signed_in?
       - if @current_user_like
         = link_to post_like_path(@post, @current_user_like), method: :delete do
@@ -22,10 +22,10 @@
 
   hr.my-5
 
-  - if @post.post_comments.empty?
+  - if @post.comments.empty?
     h2.display-6 Комментариев пока нет
   - else
-    - @post.post_comments.filter { |comment| !comment.has_parent? }.each do |comment|
+    - @post.comments.filter { |comment| !comment.has_parent? }.each do |comment|
       - if comment.user
         .card.mb-4
           .card-header
