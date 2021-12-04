@@ -30,7 +30,7 @@
         .card.mb-4
           .card-header
             b.me-3 = comment.user.email
-            span = p = t('.created_at', time: time_ago_in_words(comment.created_at))
+            span = t('.created_at', time: time_ago_in_words(comment.created_at))
           .card-body
             p.card-text = comment.content
             - if comment.has_children?

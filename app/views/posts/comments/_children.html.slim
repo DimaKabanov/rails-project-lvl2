@@ -1,5 +1,5 @@
 - children.each do |child|
-  div.ps-4
+  .ps-4
     hr
     b.me-2 = child.user.email
     small = t('.created_at', time: time_ago_in_words(child.created_at))

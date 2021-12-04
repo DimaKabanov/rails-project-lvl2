@@ -1,7 +1,7 @@
 p.mb-0
-  button.btn.btn-link.p-0 aria-controls="collapseExample-#{comment.id}" aria-expanded="false" data-bs-target="#collapseExample-#{comment.id}" data-bs-toggle="collapse" type="button" 
+  button.btn.btn-link.p-0 aria-controls="collapseExample-#{comment.id}" aria-expanded='false' data-bs-target="#collapseExample-#{comment.id}" data-bs-toggle='collapse' type='button'
     = t('.reply')
-div.collapse.mt-3.mb-2(id="collapseExample-#{comment.id}")
+.collapse.mt-3.mb-2 id="collapseExample-#{comment.id}"
   - if user_signed_in?
     = render 'posts/comments/form', parent_id: comment.id
   - else

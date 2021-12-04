@@ -5,10 +5,19 @@ header.d-flex.justify-content-between.align-items-center.py-lg-3.mb-4
     = link_to t('nav.posts'), root_path, class: 'nav-link text-body me-auto'
     - if user_signed_in?
       = link_to t('nav.add_post'), new_post_path, class: 'nav-link text-body'
-      = link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'nav-link text-body'
+      = link_to(t('nav.logout'),
+                  destroy_user_session_path,
+                  method: :delete,
+                  class: 'nav-link text-body')
     - else
-      = link_to t('nav.login'), new_user_session_path, class: 'nav-link text-body'
-      = link_to t('nav.registration'), new_user_registration_path, class: 'nav-link text-body'
+      = link_to(t('nav.login'),
+                  new_user_session_path,
+                  class: 'nav-link text-body')
+      = link_to(t('nav.registration'),
+                  new_user_registration_path,
+                  class: 'nav-link text-body')
     - I18n.available_locales.without(I18n.locale).each do |locale|
       = link_to url_for(locale: locale) do
-          = image_tag asset_pack_path("media/images/flag-#{locale}.svg"), width: 25, alt: "switch language to #{locale}"
+          = image_tag(asset_pack_path("media/images/flag-#{locale}.svg"),
+                      width: 25,
+                      alt: "switch language to #{locale}")

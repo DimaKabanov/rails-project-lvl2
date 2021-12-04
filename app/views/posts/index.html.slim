@@ -3,7 +3,7 @@
 - else
   .list-group.text-start
     - @posts.each do |post|
-      = link_to post, class: "list-group-item list-group-item-action" do
+      = link_to post, class: 'list-group-item list-group-item-action' do
         .d-flex.w-100.justify-content-between
           h5.mb-1 = post.title
           small = t('.created_at', time: time_ago_in_words(post.created_at))
