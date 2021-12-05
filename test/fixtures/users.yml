@@ -1,5 +1,11 @@
+DEFAULTS: &DEFAULTS
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
 one:
-  email: testone@mail.ru
+  <<: *DEFAULTS
+  email: $LABEL@email.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 two:
-  email: testtwo@mail.ru
+  <<: *DEFAULTS
+  email: $LABEL@email.com

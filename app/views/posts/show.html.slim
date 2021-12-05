@@ -1,5 +1,5 @@
 .text-start
-  h1 = @post.title
+  h2 = @post.title
   p = @post.body
   p = t('.author', email: @post.creator.email)
   p = t('.created_at', time: time_ago_in_words(@post.created_at))

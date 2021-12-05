@@ -3,23 +3,45 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+  setup do
+    @user = users(:one)
+    @post = posts(:one)
+    @params = {
+      title: Faker::Lorem.sentence(word_count: 2),
+      body: Faker::Lorem.sentence(word_count: 30),
+      post_category_id: @post.post_category_id
+    }
+  end
+
   test 'should get index' do
-    get posts_index_url
+    get root_path
+
     assert_response :success
   end
 
   test 'should get new' do
-    get posts_new_url
-    assert_response :success
-  end
+    sign_in @user
+    get new_post_path
 
-  test 'should get create' do
-    get posts_create_url
     assert_response :success
   end
 
   test 'should get show' do
-    get posts_show_url
+    sign_in @user
+    get post_path @post
+
     assert_response :success
+    assert_select 'h2', @post.title
+  end
+
+  test 'should create new post' do
+    sign_in @user
+    post posts_path, params: { post: @params }
+
+    assert_response :redirect
+    follow_redirect!
+    assert_select 'h2', @params[:title]
   end
 end
