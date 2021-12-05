@@ -22,5 +22,5 @@ jobs:
         with:
           ruby-version: 3.0.2
           bundler-cache: true
-      - run: make ci-setup
+      - run: make setup
       - run: make check
