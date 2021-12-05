@@ -20,7 +20,6 @@ setup:
 	cp -n .env.example .env || true
 	bin/setup
 	bin/rails db:fixtures:load
-	npx simple-git-hooks
 
 check: lint test
 
