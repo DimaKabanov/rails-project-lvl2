@@ -41,7 +41,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     post posts_path, params: { post: @params }
 
     assert_response :redirect
-    follow_redirect!
-    assert_select 'h2', @params[:title]
+    post = Post.find_by(@params)
+
+    assert { post }
   end
 end

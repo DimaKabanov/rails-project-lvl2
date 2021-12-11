@@ -10,8 +10,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     @comment = post_comments(:one)
     sign_in users(:one)
     @params = {
-      content: Faker::Lorem.sentence(word_count: 30),
-      parent_id: nil
+      content: Faker::Lorem.sentence(word_count: 30)
     }
   end
 
@@ -19,7 +18,8 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
     post post_comments_path(@post), params: { post_comment: @params }
     assert_redirected_to @post
 
-    follow_redirect!
-    assert_select 'p.card-text', @params[:content]
+    comment = PostComment.find_by(@params)
+
+    assert { comment }
   end
 end
